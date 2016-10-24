@@ -1,10 +1,4 @@
 de\fincon\dom\Message.class
-de\bundesliga\GetSpielResponse.class
-de\bundesliga\package-info.class
 de\fincon\bundesliga\service\Application.class
-de\bundesliga\Spiel.class
 de\fincon\bundesliga\service\WebServiceConfig.class
-de\bundesliga\ObjectFactory.class
-de\fincon\bundesliga\service\BundesligaEndpoint.class
-de\bundesliga\GetSpielRequest.class
 de\fincon\rest\client\HalloRest.class

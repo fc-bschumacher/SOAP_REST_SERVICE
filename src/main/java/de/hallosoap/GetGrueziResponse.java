@@ -2,11 +2,11 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.7 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.10.21 um 04:24:38 PM CEST 
+// Generiert: 2016.10.24 um 03:16:49 PM CEST 
 //
 
 
-package de.bundesliga;
+package de.hallosoap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -25,7 +25,7 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="spiel" type="{http://bundesliga.de}spiel"/>
+ *         &lt;element name="gruezi" type="{http://hallosoap.de}gruezi"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -36,36 +36,36 @@ import javax.xml.bind.annotation.XmlType;
  */
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlType(name = "", propOrder = {
-    "spiel"
+    "gruezi"
 })
-@XmlRootElement(name = "getSpielResponse")
-public class GetSpielResponse {
+@XmlRootElement(name = "getGrueziResponse")
+public class GetGrueziResponse {
 
     @XmlElement(required = true)
-    protected Spiel spiel;
+    protected Gruezi gruezi;
 
     /**
-     * Ruft den Wert der spiel-Eigenschaft ab.
+     * Ruft den Wert der gruezi-Eigenschaft ab.
      * 
      * @return
      *     possible object is
-     *     {@link Spiel }
+     *     {@link Gruezi }
      *     
      */
-    public Spiel getSpiel() {
-        return spiel;
+    public Gruezi getGruezi() {
+        return gruezi;
     }
 
     /**
-     * Legt den Wert der spiel-Eigenschaft fest.
+     * Legt den Wert der gruezi-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
-     *     {@link Spiel }
+     *     {@link Gruezi }
      *     
      */
-    public void setSpiel(Spiel value) {
-        this.spiel = value;
+    public void setGruezi(Gruezi value) {
+        this.gruezi = value;
     }
 
 }

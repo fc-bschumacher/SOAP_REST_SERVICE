@@ -1,6 +1,5 @@
 package de.fincon.bundesliga.service;
 
-
 import java.io.IOException;
 
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -12,32 +11,38 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import de.bundesliga.GetSpielRequest;
-import de.bundesliga.GetSpielResponse;
-import de.bundesliga.Spiel;
 import de.fincon.dom.Message;
 import de.fincon.rest.client.HalloRest;
+import de.hallosoap.GetGrueziRequest;
+import de.hallosoap.GetGrueziResponse;
+import de.hallosoap.Gruezi;
 
 @Endpoint
-public class BundesligaEndpoint {
+public class GrueziEndpoint {
 	
-	private static final String NAMESPACE_URI = "http://bundesliga.de";
+	// statische Definition des Namespaces
+	private static final String NAMESPACE_URI = "http://hallosoap.de";
 	
-	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getSpielRequest")
+	/*
+	 * 	SOAP Methode getGreeting
+	 */
+	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getGrueziRequest")
 	@ResponsePayload
-	public GetSpielResponse getSpiel(@RequestPayload GetSpielRequest request) {
+	public GetGrueziResponse getGruss(@RequestPayload GetGrueziRequest request) {
 
-		Spiel spiel = new Spiel();
-		spiel.setMannschaft("Pauli");
+		// Erstellung der einzelnen Instanzen
+		Gruezi gruss = new Gruezi();
+		gruss.setGruss("Pauli");
 		
-		Spiel error = new Spiel();
-		error.setMannschaft("Error");
+		Gruezi error = new Gruezi();
+		error.setGruss("Error");
 		
-		
+		// Connection zum REST Service
 		String restresponse = "";
 		HalloRest rest = new HalloRest();
 		restresponse = rest.getGreeting();
 		
+		// Verarbeitung der REST Response(JSON String) mimdt Jackson
 		ObjectMapper mapper = new ObjectMapper();
 		Message msg = new Message();
 		
@@ -51,13 +56,14 @@ public class BundesligaEndpoint {
 			e.printStackTrace();
 		}
 		
-		GetSpielResponse response = new GetSpielResponse();
+		// Erstellung eines Response Objektes
+		GetGrueziResponse response = new GetGrueziResponse();
 		
 		if (msg.getText().equals("Hello, World!")){
 			
-			response.setSpiel(spiel);
+			response.setGruezi(gruss);
 		} else {
-			response.setSpiel(error);
+			response.setGruezi(error);
 		}
 	
 		return response;

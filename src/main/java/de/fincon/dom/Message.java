@@ -1,5 +1,8 @@
 package de.fincon.dom;
 
+/*
+ *  PoJo um den zurückgelieferten JSON String zu deserialisieren
+ */
 public class Message {
 	
 	private int ID;

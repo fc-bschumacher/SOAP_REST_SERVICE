@@ -2,11 +2,11 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.7 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.10.21 um 04:24:38 PM CEST 
+// Generiert: 2016.10.24 um 03:16:49 PM CEST 
 //
 
 
-package de.bundesliga;
+package de.hallosoap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -15,16 +15,16 @@ import javax.xml.bind.annotation.XmlType;
 
 
 /**
- * <p>Java-Klasse für spiel complex type.
+ * <p>Java-Klasse für gruezi complex type.
  * 
  * <p>Das folgende Schemafragment gibt den erwarteten Content an, der in dieser Klasse enthalten ist.
  * 
  * <pre>
- * &lt;complexType name="spiel">
+ * &lt;complexType name="gruezi">
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
- *         &lt;element name="mannschaft" type="{http://www.w3.org/2001/XMLSchema}string"/>
+ *         &lt;element name="gruss" type="{http://www.w3.org/2001/XMLSchema}string"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -34,36 +34,36 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "spiel", propOrder = {
-    "mannschaft"
+@XmlType(name = "gruezi", propOrder = {
+    "gruss"
 })
-public class Spiel {
+public class Gruezi {
 
     @XmlElement(required = true)
-    protected String mannschaft;
+    protected String gruss;
 
     /**
-     * Ruft den Wert der mannschaft-Eigenschaft ab.
+     * Ruft den Wert der gruss-Eigenschaft ab.
      * 
      * @return
      *     possible object is
      *     {@link String }
      *     
      */
-    public String getMannschaft() {
-        return mannschaft;
+    public String getGruss() {
+        return gruss;
     }
 
     /**
-     * Legt den Wert der mannschaft-Eigenschaft fest.
+     * Legt den Wert der gruss-Eigenschaft fest.
      * 
      * @param value
      *     allowed object is
      *     {@link String }
      *     
      */
-    public void setMannschaft(String value) {
-        this.mannschaft = value;
+    public void setGruss(String value) {
+        this.gruss = value;
     }
 
 }

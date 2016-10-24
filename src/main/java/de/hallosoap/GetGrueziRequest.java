@@ -2,11 +2,11 @@
 // Diese Datei wurde mit der JavaTM Architecture for XML Binding(JAXB) Reference Implementation, v2.2.7 generiert 
 // Siehe <a href="http://java.sun.com/xml/jaxb">http://java.sun.com/xml/jaxb</a> 
 // Änderungen an dieser Datei gehen bei einer Neukompilierung des Quellschemas verloren. 
-// Generiert: 2016.10.21 um 04:24:38 PM CEST 
+// Generiert: 2016.10.24 um 03:16:49 PM CEST 
 //
 
 
-package de.bundesliga;
+package de.hallosoap;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
@@ -38,8 +38,8 @@ import javax.xml.bind.annotation.XmlType;
 @XmlType(name = "", propOrder = {
     "servus"
 })
-@XmlRootElement(name = "getSpielRequest")
-public class GetSpielRequest {
+@XmlRootElement(name = "getGrueziRequest")
+public class GetGrueziRequest {
 
     @XmlElement(required = true)
     protected String servus;
