@@ -42,6 +42,6 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 
 	@Bean
 	public XsdSchema spielSchema() {
-		return new SimpleXsdSchema(new ClassPathResource("spiel.xsd"));
+		return new SimpleXsdSchema(new ClassPathResource("hellosoap.xsd"));
 	}
 }
