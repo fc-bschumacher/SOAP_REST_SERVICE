@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-	xmlns:tns="http://bundesliga.de" targetNamespace="http://bundesliga.de"
+	xmlns:tns="http://hellosoap.de" targetNamespace="http://hellosoap.de"
 	elementFormDefault="qualified">
 
-	<xs:element name="getSpielRequest">
+	<xs:element name="getGrueziRequest">
 		<xs:complexType>
 			<xs:sequence>
 				<xs:element name="servus" type="xs:string" />
@@ -11,20 +11,18 @@
 		</xs:complexType>
 	</xs:element>
 
-	<xs:element name="getSpielResponse">
+	<xs:element name="getGrueziResponse">
 		<xs:complexType>
 			<xs:sequence>
-				<xs:element name="spiel" type="tns:spiel" />
+				<xs:element name="gruezi" type="tns:gruezi" />
 			</xs:sequence>
 		</xs:complexType>
 	</xs:element>
 
-	<xs:complexType name="spiel">
+	<xs:complexType name="gruezi">
 		<xs:sequence>
-			<xs:element name="mannschaft" type="xs:string" />
+			<xs:element name="gruss" type="xs:string" />
 		</xs:sequence>
 	</xs:complexType>
-
-
 
 </xs:schema>
