@@ -3,7 +3,7 @@ package de.fincon.rest.client;
 import org.springframework.web.client.RestTemplate;
 
 // REST Client
-public class HalloRest {
+public class HelloRest {
 
 	final String uri = "http://localhost:8082/greeting";
 	

@@ -1,4 +1,4 @@
-package de.fincon.bundesliga.service;
+package de.fincon.hellosoap.service;
 
 import java.io.IOException;
 
@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import de.fincon.dom.Message;
-import de.fincon.rest.client.HalloRest;
+import de.fincon.rest.client.HelloRest;
 import de.hallosoap.GetGrueziRequest;
 import de.hallosoap.GetGrueziResponse;
 import de.hallosoap.Gruezi;
@@ -39,7 +39,7 @@ public class GrueziEndpoint {
 		
 		// Connection zum REST Service
 		String restresponse = "";
-		HalloRest rest = new HalloRest();
+		HelloRest rest = new HelloRest();
 		restresponse = rest.getGreeting();
 		
 		// Verarbeitung der REST Response(JSON String) mimdt Jackson

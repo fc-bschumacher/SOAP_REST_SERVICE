@@ -1,4 +1,4 @@
-package de.fincon.bundesliga.service;
+package de.fincon.hellosoap.service;
 
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.ApplicationContext;
