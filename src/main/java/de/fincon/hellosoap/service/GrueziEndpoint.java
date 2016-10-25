@@ -21,7 +21,7 @@ import de.hallosoap.Gruezi;
 public class GrueziEndpoint {
 	
 	// statische Definition des Namespaces
-	private static final String NAMESPACE_URI = "http://hallosoap.de";
+	private static final String NAMESPACE_URI = "http://hellosoap.de";
 	
 	/*
 	 * 	SOAP Methode getGreeting
