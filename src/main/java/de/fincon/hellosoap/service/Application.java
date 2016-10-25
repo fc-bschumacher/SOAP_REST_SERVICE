@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class Application {
 
 	/*
-	 * 		Main Klasse für Spring Boot zum Ausführen der Applikation 
+	 * 		main class for spring boot to run the application
 	 */
 	public static void main(String[] args) {
 		SpringApplication.run(Application.class, args);

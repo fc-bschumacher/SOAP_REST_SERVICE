@@ -1,8 +1,5 @@
 de\hellosoap\GetGrueziRequest.class
 de\hellosoap\package-info.class
-de\hallosoap\GetGrueziResponse.class
-de\hallosoap\package-info.class
-de\hallosoap\ObjectFactory.class
 de\hellosoap\GetGrueziResponse.class
 de\hellosoap\ObjectFactory.class
 de\fincon\rest\client\HelloRest.class
@@ -10,6 +7,4 @@ de\fincon\hellosoap\service\Application.class
 de\hellosoap\Gruezi.class
 de\fincon\dom\Message.class
 de\fincon\hellosoap\service\GrueziEndpoint.class
-de\hallosoap\Gruezi.class
 de\fincon\hellosoap\service\WebServiceConfig.class
-de\hallosoap\GetGrueziRequest.class

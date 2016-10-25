@@ -1,7 +1,7 @@
 package de.fincon.dom;
 
 /*
- *  PoJo um den zurückgelieferten JSON String zu deserialisieren
+ *  PoJo to deserialize the JSON String given back from
  */
 public class Message {
 	

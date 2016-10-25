@@ -7,7 +7,9 @@ public class HelloRest {
 
 	final String uri = "http://localhost:8082/greeting";
 	
-	// Methode um den String zurück zu liefern (JSON)
+	/*
+	 * 	method to return the JSON String 
+	 */
 	public String getGreeting() {
 		RestTemplate rest = new RestTemplate();
 		String result = rest.getForObject(uri, String.class);

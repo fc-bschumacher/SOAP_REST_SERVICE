@@ -13,36 +13,38 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import de.fincon.dom.Message;
 import de.fincon.rest.client.HelloRest;
-import de.hallosoap.GetGrueziRequest;
-import de.hallosoap.GetGrueziResponse;
-import de.hallosoap.Gruezi;
+import de.hellosoap.GetGrueziRequest;
+import de.hellosoap.GetGrueziResponse;
+import de.hellosoap.Gruezi;
 
 @Endpoint
 public class GrueziEndpoint {
 	
-	// statische Definition des Namespaces
-	private static final String NAMESPACE_URI = "http://hallosoap.de";
+	/*
+	 * 	static definition for the namespace
+	 */
+	private static final String NAMESPACE_URI = "http://hellosoap.de";
 	
 	/*
-	 * 	SOAP Methode getGreeting
+	 * 	SOAP method getGreeting
 	 */
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getGrueziRequest")
 	@ResponsePayload
 	public GetGrueziResponse getGruss(@RequestPayload GetGrueziRequest request) {
 
-		// Erstellung der einzelnen Instanzen
+		// creating two instances of the Gruezi.class
 		Gruezi gruss = new Gruezi();
 		gruss.setGruss("Pauli");
 		
 		Gruezi error = new Gruezi();
 		error.setGruss("Error");
 		
-		// Connection zum REST Service
+		// connection to the REST Service
 		String restresponse = "";
 		HelloRest rest = new HelloRest();
 		restresponse = rest.getGreeting();
 		
-		// Verarbeitung der REST Response(JSON String) mimdt Jackson
+		// handling the REST response(JSON String) with the aid of Jackson
 		ObjectMapper mapper = new ObjectMapper();
 		Message msg = new Message();
 		
@@ -56,7 +58,7 @@ public class GrueziEndpoint {
 			e.printStackTrace();
 		}
 		
-		// Erstellung eines Response Objektes
+		// creating the response object
 		GetGrueziResponse response = new GetGrueziResponse();
 		
 		if (msg.getText().equals("Hello, World!")){

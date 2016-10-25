@@ -27,14 +27,15 @@ public class WebServiceConfig extends WsConfigurerAdapter {
 	}
 
 	
-	// die bezeichnung des Bean Namens (name = ... ) bezeichnet später den genauen Namen der wsdl Datei  ->  hier: hallosoap.wsdl 
-	@Bean(name = "hallosoap")
+	// the description of the Bean (name = ... ) describes the name of the wsdl file ->  current project: hellosoap.wsdl 
+	@Bean(name = "hellosoap")
 	public DefaultWsdl11Definition defaultWsdl11Definition(XsdSchema spielSchema) {
 		DefaultWsdl11Definition wsdl11Definition = new DefaultWsdl11Definition();
-		wsdl11Definition.setPortTypeName("BundesligaPort");
-		// Verzeichnis in dem die wsdl Datei abgerufen werden kann
+		wsdl11Definition.setPortTypeName("HelloSoapPort");
+		
+		// directory where the current wsdl file is lying
 		wsdl11Definition.setLocationUri("/ws");
-		wsdl11Definition.setTargetNamespace("http://hallosoap.de");
+		wsdl11Definition.setTargetNamespace("http://hellosoap.de");
 		wsdl11Definition.setSchema(spielSchema);
 		return wsdl11Definition;
 	}
