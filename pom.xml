@@ -3,7 +3,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	
 	<groupId>eu.fincon</groupId>
-	<artifactId>HelloSOAP</artifactId>
+	<artifactId>hellosoap</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 
   	<name>hellosoap</name>

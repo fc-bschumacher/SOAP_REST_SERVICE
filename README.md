@@ -3,7 +3,7 @@
 
 ### Start Server:
 
-`java -jar target/HelloSOAP-0.0.1-SNAPSHOT.jar`
+`java -jar target/hellosoap-0.0.1-SNAPSHOT.jar`
 
 oder
 
