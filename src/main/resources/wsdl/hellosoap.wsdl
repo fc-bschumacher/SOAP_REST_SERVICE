@@ -1,0 +1,49 @@
+<wsdl:definitions targetNamespace="http://spring.io/guides/gs-producing-web-service" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:sch="http://spring.io/guides/gs-producing-web-service" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://spring.io/guides/gs-producing-web-service">
+   <wsdl:types>
+      <xs:schema elementFormDefault="qualified" targetNamespace="http://spring.io/guides/gs-producing-web-service" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+         <xs:element name="getHelloSOAPRequest">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="name" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="getHelloSOAPResponse">
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="answer" type="xs:string"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:schema>
+   </wsdl:types>
+   <wsdl:message name="getHelloSOAPResponse">
+      <wsdl:part element="tns:getHelloSOAPResponse" name="getHelloSOAPResponse"/>
+   </wsdl:message>
+   <wsdl:message name="getHelloSOAPRequest">
+      <wsdl:part element="tns:getHelloSOAPRequest" name="getHelloSOAPRequest"/>
+   </wsdl:message>
+   <wsdl:portType name="HelloSOAPPort">
+      <wsdl:operation name="getHelloSOAP">
+         <wsdl:input message="tns:getHelloSOAPRequest" name="getHelloSOAPRequest"/>
+         <wsdl:output message="tns:getHelloSOAPResponse" name="getHelloSOAPResponse"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <wsdl:binding name="HelloSOAPPortSoap11" type="tns:HelloSOAPPort">
+      <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+      <wsdl:operation name="getHelloSOAP">
+         <soap:operation soapAction=""/>
+         <wsdl:input name="getHelloSOAPRequest">
+            <soap:body use="literal"/>
+         </wsdl:input>
+         <wsdl:output name="getHelloSOAPResponse">
+            <soap:body use="literal"/>
+         </wsdl:output>
+      </wsdl:operation>
+   </wsdl:binding>
+   <wsdl:service name="HelloSOAPPortService">
+      <wsdl:port binding="tns:HelloSOAPPortSoap11" name="HelloSOAPPortSoap11">
+         <soap:address location="http://localhost:8080/helloSOAP"/>
+      </wsdl:port>
+   </wsdl:service>
+</wsdl:definitions>
