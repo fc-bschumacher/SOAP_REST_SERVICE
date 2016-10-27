@@ -1,8 +1,5 @@
 package eu.fincon.hellosoap.service.provider;
 
-import java.net.URL;
-import java.nio.file.Path;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -10,7 +7,7 @@ import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
-import eu.fincon.hellosoap.service.internal.ApplicationProperties;
+import eu.fincon.hellosoap.service.ApplicationProperties;
 import eu.fincon.hellosoap.service.model.RestResponse;
 import io.spring.guides.gs_producing_web_service.GetHelloSOAPRequest;
 import io.spring.guides.gs_producing_web_service.GetHelloSOAPResponse;
