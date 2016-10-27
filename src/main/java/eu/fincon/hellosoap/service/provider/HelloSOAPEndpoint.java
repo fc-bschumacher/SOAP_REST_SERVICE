@@ -1,11 +1,13 @@
 package eu.fincon.hellosoap.service.provider;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
 import org.springframework.ws.server.endpoint.annotation.PayloadRoot;
 import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
+import eu.fincon.hellosoap.service.internal.ApplicationProperties;
 import io.spring.guides.gs_producing_web_service.GetHelloSOAPRequest;
 import io.spring.guides.gs_producing_web_service.GetHelloSOAPResponse;
 import io.spring.guides.gs_producing_web_service.HelloSOAPPort;
@@ -14,6 +16,9 @@ import io.spring.guides.gs_producing_web_service.HelloSOAPPort;
 public class HelloSOAPEndpoint implements HelloSOAPPort {
 	
 	private static final String NAMESPACE_URI = "http://spring.io/guides/gs-producing-web-service";
+	
+	@Autowired
+	private ApplicationProperties properties;
 
 	@PayloadRoot(namespace = NAMESPACE_URI, localPart = "getHelloSOAPRequest")
 	@ResponsePayload
@@ -23,13 +28,10 @@ public class HelloSOAPEndpoint implements HelloSOAPPort {
 		response.setAnswer(getGreeting());
 		return response;
 	}
-	
-	
-	final String uri = "http://localhost:8080/dropwizard_test";
 
-	public String getGreeting() {
+	private String getGreeting() {
 		RestTemplate rest = new RestTemplate();
-		String result = rest.getForObject(uri, String.class);
+		String result = rest.getForObject(properties.restUrl, String.class);
 		return result;
 }
 
