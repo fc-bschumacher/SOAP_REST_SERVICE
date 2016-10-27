@@ -1,9 +1,10 @@
 package eu.fincon.hellosoap.service.internal;
 
-import javax.annotation.PostConstruct;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
+
+import javax.annotation.PostConstruct;
 
 import org.springframework.stereotype.Component;
 import org.springframework.util.Assert;
@@ -26,6 +27,7 @@ public class AnswerRepository {
 		int index = new Random().nextInt(greetings.size());
         String greeting = greetings.get(index);
 		return greeting + " " + name + "!";
+		
 	}
-
+	
 }
