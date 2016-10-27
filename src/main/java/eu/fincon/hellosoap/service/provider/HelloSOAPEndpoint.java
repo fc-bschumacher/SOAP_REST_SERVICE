@@ -1,5 +1,8 @@
 package eu.fincon.hellosoap.service.provider;
 
+import java.net.URL;
+import java.nio.file.Path;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.ws.server.endpoint.annotation.Endpoint;
@@ -8,6 +11,7 @@ import org.springframework.ws.server.endpoint.annotation.RequestPayload;
 import org.springframework.ws.server.endpoint.annotation.ResponsePayload;
 
 import eu.fincon.hellosoap.service.internal.ApplicationProperties;
+import eu.fincon.hellosoap.service.model.RestResponse;
 import io.spring.guides.gs_producing_web_service.GetHelloSOAPRequest;
 import io.spring.guides.gs_producing_web_service.GetHelloSOAPResponse;
 import io.spring.guides.gs_producing_web_service.HelloSOAPPort;
@@ -25,14 +29,19 @@ public class HelloSOAPEndpoint implements HelloSOAPPort {
 	@Override
 	public GetHelloSOAPResponse getHelloSOAP(@RequestPayload GetHelloSOAPRequest getHelloSOAPRequest) {
 		GetHelloSOAPResponse response = new GetHelloSOAPResponse();
-		response.setAnswer(getGreeting());
+		response.setAnswer(getGreeting(getHelloSOAPRequest.getName()));
 		return response;
 	}
 
-	private String getGreeting() {
+	private String getGreeting(String name) {
+		String uri = properties.restUrl;
+		if (name != null) {
+			uri = uri + "?name=" + name;
+		}
+		
 		RestTemplate rest = new RestTemplate();
-		String result = rest.getForObject(properties.restUrl, String.class);
-		return result;
+		RestResponse result = rest.getForObject(uri, RestResponse.class);
+		return result.getContent();
 }
 
 
